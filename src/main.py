@@ -11,7 +11,8 @@ from utils.save_images import save_images
 
 
 # Allow memory growth and optimizations
-gpus = tf.config.experimental.list_physical_devices('GPU')
+gpus = tf.config.experimental.list_physical_devices('XLA_GPU')
+print(gpus)
 tf.config.experimental.set_memory_growth(gpus[0], True)
 tf.config.optimizer.set_jit(True)
 
